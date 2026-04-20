@@ -1,0 +1,108 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Peintures762o31.coM</title>
+
+<style>
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+button {
+  font-size: 60px;
+  border: none;
+  background: none;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.2);
+}
+
+.media-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.content-box {
+  width: 300px;
+  max-width: 80vw;
+  border-radius: 12px;
+}
+
+video {
+  width: 300px;
+  max-width: 80vw;
+  border-radius: 12px;
+}
+
+img.picture-box {
+  width: 300px;
+  max-width: 80vw;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<button id="playBtn">▶️</button>
+
+<a href="https://namski.com" target="_blank" rel="noopener noreferrer">
+<img src="namski.png" style="margin-top:30px;width:100px;height:100px;object-fit:contain;cursor:pointer;">
+</a>
+
+<div class="media-container">
+  <video class="content-box" controls="">
+    <source src="peinture.mp4" type="video/mp4">
+    Your browser does not support video playback.
+  </video>
+
+  <img class="picture-box" src="slavery.png" alt="Slavery photo">
+</div>
+
+<audio id="player" src="Piano.flac"></audio>
+
+<script>
+const audioFileURL = "Piano.flac";
+const audio = document.getElementById('player');
+const btn = document.getElementById('playBtn');
+let isPlaying = false;
+
+audio.src = audioFileURL;
+
+btn.addEventListener('click', () => {
+  if (isPlaying) {
+    audio.pause();
+    btn.innerHTML = '&#9654;&#65039;';
+    isPlaying = false;
+  } else {
+    audio.play();
+    btn.innerHTML = '&#9208;&#65039;';
+    isPlaying = true;
+  }
+});
+
+audio.addEventListener('ended', () => {
+  btn.innerHTML = '&#9654;&#65039;';
+  isPlaying = false;
+});
+</script>
+
+
+
+</body>
+</html>
